@@ -1,7 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'app.lovable.48a179da3b824afcb6d2b9abba68a774',
+  appId: 'appId: com.soheib.lcouzina,
+',
   appName: "L'couzina - Recettes Algériennes",
   webDir: 'dist',
   server: {
