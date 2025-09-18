@@ -50,13 +50,11 @@ export const RecipeGrid = ({ recipes, onRecipeClick, className }: RecipeGridProp
           id={recipe.id}
           title={recipe.title}
           image={recipe.image}
-          total_time={recipe.total_time}
-          portion={recipe.portion}
+          duration={recipe.total_time}
+          servings={recipe.portion}
           origin={recipe.origin}
           difficulty={recipe.difficulty}
           category={recipe.category}
-          rating={recipe.rating}
-          calories={recipe.calories}
           isFavorite={favorites.includes(recipe.id)}
           onFavoriteToggle={() => handleFavoriteToggle(recipe.id)}
           onClick={() => onRecipeClick(recipe)}

@@ -2,6 +2,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock, Users, MapPin, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/hooks/useTranslation";
 
 interface RecipeCardProps {
   id: number;
@@ -10,7 +11,7 @@ interface RecipeCardProps {
   duration: number;
   servings: number;
   origin: string;
-  difficulty: "Facile" | "Moyen" | "Festin Familial";
+  difficulty: "easy" | "medium" | "hard";
   category: string;
   isFavorite?: boolean;
   onFavoriteToggle?: (id: number) => void;
@@ -30,13 +31,15 @@ export const RecipeCard = ({
   onFavoriteToggle,
   onClick,
 }: RecipeCardProps) => {
+  const { t } = useTranslation();
+  
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case "Facile":
+      case "easy":
         return "bg-saffron text-saffron-foreground";
-      case "Moyen":
+      case "medium":
         return "bg-accent text-accent-foreground";
-      case "Festin Familial":
+      case "hard":
         return "bg-primary text-primary-foreground";
       default:
         return "bg-muted text-muted-foreground";
@@ -71,7 +74,7 @@ export const RecipeCard = ({
         </div>
         <div className="absolute top-2 left-2">
           <Badge className={getDifficultyColor(difficulty)}>
-            {difficulty}
+            {t(difficulty)}
           </Badge>
         </div>
       </div>
