@@ -1,12 +1,12 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'appId: com.soheib.lcouzina,
-',
+  appId: 'com.soheib.lcouzina',
+  
   appName: "L'couzina - Recettes Algériennes",
   webDir: 'dist',
   server: {
-    url: 'https://48a179da-3b82-4afc-b6d2-b9abba68a774.lovableproject.com?forceHideBadge=true',
+  // url removed to launch app directly
     cleartext: true
   },
   plugins: {

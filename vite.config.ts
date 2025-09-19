@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { componentTagger } from "lovable-tagger";
+// ...existing code...
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -16,3 +16,17 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
+
+function componentTagger() {
+  // Example Vite plugin that logs each file processed
+  return {
+    name: "component-tagger",
+    transform(code: string, id: string) {
+      if (id.endsWith(".tsx") || id.endsWith(".jsx")) {
+        console.log(`[component-tagger] Processing: ${id}`);
+      }
+      return null;
+    },
+  };
+}
+
